@@ -1,6 +1,6 @@
 import { input } from '../game/game';
 import { about } from './about';
-import { contact} from './contact';
+import { contact } from './contact';
 import { home } from './home';
 
 interface IObjMain {
@@ -8,8 +8,8 @@ interface IObjMain {
 }
 
 export const objectMain: IObjMain = {
-  card: '4'
-}
+  card: '4',
+};
 
 interface IRoutes {
   [key: string]: string;
@@ -24,22 +24,22 @@ const routes: IRoutes = {
 const rootDiv = <HTMLElement>document.getElementById('root');
 rootDiv.innerHTML = routes[window.location.pathname];
 
-const onNavigate = (pathname: string) => {
-  window.history.pushState({}, pathname, window.location.origin + pathname);
-  rootDiv.innerHTML = routes[pathname];
-  ololololo();
-  input()
-};
-
 export function ololololo() {
   const selectCard = document.querySelector('#select-card');
   if (selectCard instanceof HTMLSelectElement) {
     objectMain.card = selectCard.value;
     // console.log('ololololo', objectMain)
 
-    setTimeout(ololololo, 1000)
+    setTimeout(ololololo, 1000);
   }
 }
+
+const onNavigate = (pathname: string) => {
+  window.history.pushState({}, pathname, window.location.origin + pathname);
+  rootDiv.innerHTML = routes[pathname];
+  ololololo();
+  input();
+};
 
 const linkNavbarAbout = <HTMLElement>document.querySelector('.about');
 const linkNavbarHome = <HTMLElement>document.querySelector('.home');
