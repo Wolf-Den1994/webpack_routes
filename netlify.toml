@@ -2,3 +2,13 @@
   from = "/about"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/game"
+  to = "/"
+  status = 301
